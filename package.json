@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@egjs/react-flicking": "^3.7.1",
     "@geist-ui/react": "^2.1.4",
     "@geist-ui/react-icons": "^1.0.1",
     "@svgr/webpack": "^5.5.0",

@@ -6,6 +6,8 @@
 @import 'category';
 @import 'starprofile';
 @import 'modal';
+@import 'purchase';
+@import 'itemchooser';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
 .body{
     display: flex;
@@ -36,6 +38,9 @@
     font-weight: 400;
     letter-spacing: -0.01rem;
     line-height: 1.8rem;
+}
+.with-label{
+    font-family: $family1;
 }
 .person-subtitle{
     font-family: $family1;

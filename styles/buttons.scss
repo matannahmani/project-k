@@ -5,7 +5,7 @@
     border: unset !important;
     font-family: $family1;
     .text{
-        top: 0 !important;
+        top: 1px !important;
         font-weight: bolder;
     }
 }
@@ -25,7 +25,6 @@
         display: flex !important;
         >svg{
             margin-right: 8px;
-            margin-bottom: px;
         }
     }
 }
