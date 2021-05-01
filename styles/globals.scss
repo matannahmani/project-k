@@ -1,0 +1,54 @@
+@import 'colors';
+@import 'layout';
+@import 'inputs';
+@import 'buttons';
+@import 'videobox';
+@import 'category';
+@import 'starprofile';
+@import 'modal';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+.body{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+.person-title{
+        font-family: $family1;
+        // font-family: cerebri, sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        letter-spacing: -0.028rem;
+        line-height: 1.9rem;
+        margin: 0px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-wrap: break-word;
+        display: inline-block;
+}
+.person-price{
+    margin-right: 0.4rem;
+    font-family: $family1;
+    // font-family: cerebri, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: -0.01rem;
+    line-height: 1.8rem;
+}
+.person-subtitle{
+    font-family: $family1;
+    // font-family: cerebri, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -0.01rem;
+    line-height: 1.8rem;
+    color: rgb(173, 174, 181);
+    margin: 0px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+}

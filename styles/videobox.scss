@@ -1,0 +1,36 @@
+.videobox{
+    border-radius: 12px;
+    display: flex;
+    margin: 24px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    max-height: 425px;
+    min-height: 250px;
+    height: 100%;
+    .videobox-text{
+        align-self: center;
+        color: $white;
+        font-family: cerebri,Helvetica,sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        padding: 0 18px;
+        position: absolute;
+        text-align: center;
+        margin: 0;
+        font-size: 32px;
+        max-width: 450px;
+    }
+    video{
+        position: absolute;
+    }
+}
+@media (max-width: 375px){
+    .videobox-text{
+        font-size: 24px;
+        max-width: 390px;
+    }
+    video{
+        max-height: unset;
+    }
+}

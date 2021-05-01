@@ -1,0 +1,31 @@
+.transbtn{
+    color: $white !important;
+    background: $error !important;
+    border-radius: 8px !important;
+    border: unset !important;
+    font-family: $family1;
+    .text{
+        top: 0 !important;
+        font-weight: bolder;
+    }
+}
+.opbtn{
+    background: transparent !important;    
+}
+.btn{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.fatbtn{
+    height: 60px !important;
+    border-radius: 24px !important;
+    .text{
+        font-size: 20px;
+        display: flex !important;
+        >svg{
+            margin-right: 8px;
+            margin-bottom: px;
+        }
+    }
+}

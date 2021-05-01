@@ -1,0 +1,52 @@
+.starprofile-container{
+    padding: 24px !important;
+}
+.starprofile-head{
+    width: 600px;
+    max-width: 100%;
+    background: $white;
+    height: 300px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+.starprofile-head-info{
+    display: flex;
+    justify-content: space-between;
+}
+.starprofile-avatarbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0;
+}
+.starprofile-rates{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 6.6rem;
+    background-color: rgb(28, 28, 28);
+    border-radius: 0.8rem;
+    margin: 24px 0px;
+}
+.ratingbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    > div{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+}
+.ratingsub{
+    font-family: $family1;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01rem;
+    line-height: 1.8rem;
+    color: rgb(173, 174, 181);
+    margin: 0px;
+}

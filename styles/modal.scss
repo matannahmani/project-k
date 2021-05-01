@@ -1,0 +1,40 @@
+.howwork-modal-step{
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    > div {
+        position: relative;
+        margin-right: 8px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: $error;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg{
+            color: $white !important;
+        }
+    }
+    .step:after{
+        content: "";
+        height: 100px;
+        width: 0.4rem;
+        background-color: $error;
+        position: absolute;
+        bottom: 0px;
+        transform: translate3d(0px, 100%, 0px);
+    }
+    > p{
+        color: rgb(37, 37, 37) !important;
+        font-family: $family1;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: rgb(255, 255, 255);
+        margin: 0px;
+        margin-top: 2px;
+        width: 80%;
+    }
+
+}

@@ -1,0 +1,88 @@
+.category{
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+    h1{
+        color: $white;
+        font-family: $family1;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -.1px;
+        line-height: 30px;
+        margin: 16px 0px;
+        text-transform: capitalize;
+    }
+    .category-scroll{
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 100%;
+        align-items: center;
+        padding: 8px 0px;
+    }
+}
+
+.personcard:hover{
+    transform: translateY(-8px);
+}
+.personcard{
+    transition: all 0.5s ease-in-out;
+    width: 200px !important;
+    height: 320px !important;
+    background: none !important;
+    border: none !important;
+    margin: 0px 16px !important;
+    cursor: pointer;
+    img{
+        border-radius: 8px;
+        object-fit: cover !important;
+    }
+    .content {
+        color: $white;
+        padding: 0px !important;
+    }
+}
+.person-stats{
+    height: 100%;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0px 8px;
+    > span{
+        text-shadow: $error 0px 0px 2px;
+        font-weight: bolder;
+        position: relative;
+    }
+}
+.person-progress-div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 16px;
+    width: 120px;
+    span {
+        position: absolute;
+        right: 8px;
+        font-family: $family1;
+        font-size: 12px;
+        font-weight: bold;
+        color: black;
+        z-index: 2;
+    }
+}
+.person-info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+.person-progress{
+    background: white !important;
+    box-shadow: 0px 0px 4px 0px $error;
+    z-index: 2;
+    width: 120px !important;
+    height: 16px !important;
+    border-radius: 12px !important;
+}
+.personcard-image{
+    position: relative;
+}
