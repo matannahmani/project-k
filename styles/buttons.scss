@@ -12,6 +12,9 @@
 .opbtn{
     background: transparent !important;    
 }
+.darkbtn{
+    background: $dark !important;
+}
 .btn{
     display: flex !important;
     align-items: center !important;

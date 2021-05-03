@@ -1,0 +1,23 @@
+.moodicon{
+    background: $dark;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    svg{
+        font-size: 36px;
+        color: $error;
+    }
+}
+
+.moodicon-wraper{
+    span{
+        font-family: $family1;
+        color: $dark;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+}

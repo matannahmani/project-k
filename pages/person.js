@@ -21,7 +21,7 @@ const Person = () => {
                 <p className="person-subtitle">ITZY - Raper</p>
                 </div>
                 <div className="starprofile-avatarbox">
-                <Avatar/>
+                <Avatar src="https://pm1.narvii.com/6612/f8e3648bce13c3d6491182d0babdd460e4ec2d48_hq.jpg" size="large"/>
                 <Progress/>
                 </div>
                 </div>

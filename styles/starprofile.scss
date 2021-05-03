@@ -11,6 +11,9 @@
 }
 .starprofile-head-info{
     display: flex;
+    // background-image: url("https://lh3.googleusercontent.com/p2cfqhwMbMgBAieW7TNUCETl-qbVhgEx9yENJSb8yAvI72yDkxYMSHJFeWJFcwSbG8VuKSvrjkOd47D-3Rlc4ifz_qrh4hSQZUg=w1200-h630-rj-pp-e365");
+    background-position: center;
+    background-size: cover;
     justify-content: space-between;
 }
 .starprofile-avatarbox{
@@ -19,6 +22,9 @@
     justify-content: space-between;
     align-items: flex-end;
     margin: 0;
+    .person-progress-div{
+        margin-top: 16px;
+    }
 }
 .starprofile-rates{
     display: flex;
