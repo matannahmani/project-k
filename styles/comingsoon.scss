@@ -1,0 +1,197 @@
+.index-container{
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('/bgindex.jpg');
+}
+
+.index-container .title{
+    animation: title-mix 4s infinite;
+    animation: shake-text 4s infinite;
+    text-shadow: 3px 3px $error; 
+    color: #FAFAFA;
+    font-size: 9vw;
+    line-height: 1.3;
+    letter-spacing: 5px;
+    color: white;
+}
+.cdbox{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 600px;
+}
+.cd{
+    color: white;
+    background-color: hsla(0,0%,100%,.80);
+    color: $error;
+    animation: color-change 4s infinite;
+    font-size: 32px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15%;
+    position: relative;
+}
+.logo{
+    max-width: 90vw;
+}
+@media (min-width: 900px){
+    .index-container .title{
+        font-size: 60px;
+    }
+}
+@media (max-width: 500px){
+    .cd{
+        width: 80px;
+        height: 80px;
+        .label{
+            font-size: 18px !important;
+        }
+    }
+    .logo{
+        transform: scale(0.6);
+    }
+}
+@media (max-width: 330px){
+    .cd{
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+        .label{
+            font-size: 12px !important;
+        }
+    }
+}
+.cd .label{
+    color: white;
+    position: absolute;
+    bottom: -40px;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+
+@keyframes shake-text {
+    0% { transform: translate3d(0,0,0);}
+    50% { transform: translate3d(0,6px,0);}
+    0% { transform: translate3d(0px,-6px,0);}
+    100% { transform: translate3d(0,-6px,0);}
+}
+@keyframes color-change {
+    0% { color: $error; }
+    66% { color: #bd00ff;}
+    100% { color: $error;}
+    }
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $family1;
+}
+    .input-group {
+        overflow: hidden;
+        display: block;
+        width: 441px;
+        max-width: 90vw;
+        height: 82px;
+        border: 0;
+        background-color: #ffffff;
+        border-bottom-left-radius: 41px;
+        border-bottom-right-radius: 41px;
+        border-top-left-radius: 41px;
+        border-top-right-radius: 0;
+        box-shadow: 0 17px 40px 0 rgba(75, 128, 182, 0.07);
+        margin-bottom: 22px;
+        position: relative;
+        font-size: 17px;
+        color: #a7b4c1;
+        transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out,
+          box-shadow 0.1s ease-in-out;
+      }
+      
+      .input-group:hover {
+        box-shadow: 0 14px 44px 0 rgba(0, 0, 0, 0.077);
+      }
+      
+      .input-group input {
+        position: absolute;
+        border: 0;
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0);
+        top: 0;
+        height: 65px;
+        width: 100%;
+        padding: 0 53px;
+        box-sizing: border-box;
+        z-index: 0;
+        display: block;
+        color: $dark;
+        font-size: 17px;
+        font-family: "Oxygen", sans-serif;
+        transition: top 0.1s ease-in-out;
+      }
+      
+      .input-group input::placeholder {
+        color: rgba(0, 0, 0, 0);
+      }
+      
+      .input-group input:focus,
+      .input-group input:not(:placeholder-shown) {
+        top: 17px;
+      }
+      
+      .input-group label {
+        position: absolute;
+        border: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: $error;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        padding: 0 53px;
+        box-sizing: border-box;
+        transition: all 0.1s ease-in-out;
+        font-weight: bold;
+        cursor: text;
+      }
+      
+      .input-group input:focus + label,
+      .input-group input:not(:placeholder-shown) + label {
+        bottom: 40px;
+        font-size: 13px;
+        opacity: 0.7;
+      }
+      
+      .req-mark {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        right: 33px;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 22px;
+        color: #e0e0e0;
+        font-family: "Ubuntu", sans-serif;
+        transition: all 0.5s ease-in-out;
+      }
+      .error{
+          color: $error;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        background-color: transparent !important;
+        -webkit-box-shadow: 0 0 0 50px white inset;
+      }

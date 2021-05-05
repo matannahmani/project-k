@@ -1,9 +1,9 @@
 import { Avatar, Button, Grid, Spacer } from "@geist-ui/react"
 import { Info, Star, User } from "@geist-ui/react-icons"
 import { useState } from "react"
-import HowWork from "../components/HowWork"
-import Progress from "../components/Progress"
-import RatingBox from "../components/RatingBox"
+import HowWork from "../../components/HowWork"
+import Progress from "../../components/Progress"
+import RatingBox from "../../components/RatingBox"
 import Link from 'next/link'
 
 const Person = () => {
@@ -30,7 +30,7 @@ const Person = () => {
                     <RatingBox title="Reviews (195)" rate="5.0" icon={<Star color="rgb(255, 214, 67)" fill="rgb(255, 214, 67)"/>}/>
                     {/* <RatingBox title="Reviews (195)" rate="5.0" icon={<Star color="rgb(255, 214, 67)" fill="rgb(255, 214, 67)"/>}/> */}
                 </div>
-                <Link href="/purchase">
+                <Link href="/app/purchase">
                 <Button className="transbtn fatbtn">Purchase</Button>
                 </Link>
                 <Spacer/>

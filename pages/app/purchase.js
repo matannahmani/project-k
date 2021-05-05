@@ -1,8 +1,8 @@
 import { Avatar, Button, Card, Grid, Input, Spacer } from "@geist-ui/react"
 import { useState } from "react"
 import {useRouter} from 'next/router'
-import ItemChooster from "../components/ItemChooser";
-import MoodIcon from "../components/MoodIcon";
+import ItemChooster from "../../components/ItemChooser";
+import MoodIcon from "../../components/MoodIcon";
 import {MdCake} from "react-icons/md"
 const Purchase = () => {
     const [stage,setStage] = useState(0);
@@ -40,7 +40,7 @@ const Purchase = () => {
                 }
                 <Button onClick={() => stage !== 1 ? setStage(1) : setStage(0)} className="transbtn">{stage === 0 ? 'Countine' : 'Purchase'}</Button>
                 <Spacer/>
-                <Button onClick={() => stage !== 1 ? router.push('/person') : setStage(0)} className="transbtn darkbtn">{stage === 0 ? 'Momo Profile' : 'Back'}</Button>
+                <Button onClick={() => stage !== 1 ? router.push('/app/person') : setStage(0)} className="transbtn darkbtn">{stage === 0 ? 'Momo Profile' : 'Back'}</Button>
                 </Card>
             </Grid>
         </Grid.Container>

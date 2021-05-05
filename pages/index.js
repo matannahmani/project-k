@@ -1,38 +1,60 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import VideoBox from '../components/videoheader';
-import Category from '../components/category';
-import PersonCard from '../components/personcard';
-import Link from 'next/link'
-export default function Home() {
-  return (
-    <>
-    <VideoBox posterurl="/video/poster.jpg" videourl="/video/postervideo.m4v" text={`Personalized memeories from your favorite KPOP Stars`}/>
-    <Category catname="Featured">
-      <Link href="/person">
-        <div>
-      <PersonCard price="35$" opt={["Photos","Albums"]} name="Rujin" category="Itzy" picture="https://dbkpop.com/wp-content/uploads/2019/07/itzy_itz_icy_concept_profile_ryujin.jpg"/>
-        </div>
-      </Link>
-      <PersonCard price="50$" opt={["Photos","Albums"]} name="Jennie" category="BlackPink" picture="https://i.pinimg.com/736x/f2/bc/6d/f2bc6d65fa4a708563e4db75c27fbb7c.jpg"/>
-      <PersonCard price="45$" opt={["Photos","Albums"]} name="Momo" category="Twice" picture="https://i.pinimg.com/originals/c3/79/e4/c379e4ad3337a490ea21445056d81ab4.jpg"/>
-      <PersonCard price="30$" opt={["Photos","Videos"]} name="ViVi" category="Loona" picture="https://image.kpopmap.com/2017/02/kpop-loona-february-girl-vivi-debut-2017.jpg"/>
+import { Button, Grid, Spacer } from "@geist-ui/react";
+import Countdown from "react-countdown";
+import Logo from "../components/Logo";
+import MailchimpSubscribe from "react-mailchimp-subscribe"
+import { useState } from "react";
 
-    </Category>
-    <Category catname="Photos">
-      <Link href="person">
-      <PersonCard infocard price="35$" opt={["Photos","Albums"]} name="Rujin" category="Itzy" picture="https://dbkpop.com/wp-content/uploads/2019/07/itzy_itz_icy_concept_profile_ryujin.jpg"/>
-      </Link>
-      <PersonCard infocard price="50$" opt={["Photos","Albums"]} name="Jennie" category="BlackPink" picture="https://i.pinimg.com/736x/f2/bc/6d/f2bc6d65fa4a708563e4db75c27fbb7c.jpg"/>
-      <PersonCard infocard price="30$" opt={["Photos","Videos"]} name="ViVi" category="Loona" picture="https://image.kpopmap.com/2017/02/kpop-loona-february-girl-vivi-debut-2017.jpg"/>
-      <PersonCard infocard price="45$" opt={["Photos","Albums"]} name="Momo" category="Twice" picture="https://i.pinimg.com/originals/c3/79/e4/c379e4ad3337a490ea21445056d81ab4.jpg"/>
-    </Category>
-    <Category catname="Albums">
-      <PersonCard infocard price="50$" opt={["Photos","Albums"]} name="Rujin" category="Itzy" picture="https://dbkpop.com/wp-content/uploads/2019/07/itzy_itz_icy_concept_profile_ryujin.jpg"/>
-    </Category>
-    <Category catname="Poster">
-      <PersonCard infocard price="45$" opt={["Photos","Albums"]} name="Rujin" category="Itzy" picture="https://dbkpop.com/wp-content/uploads/2019/07/itzy_itz_icy_concept_profile_ryujin.jpg"/>
-    </Category>
-    </>
-  )
+const Index = () => {
+    const [email,setEmail] = useState('');
+    const [error,setError] = useState(false);
+    const CD = ({title,time}) => (
+        <div className="cd">
+            <span>{time}</span>
+            <span className="label">{title}</span>
+        </div>
+    )
+    const CDBOX = ({days,hours,minutes,seconds}) => (
+        <div className="cdbox">
+        <CD title="Days" time={days}/>
+        <CD title="Hours" time={hours}/>
+        <CD title="Minutes" time={minutes}/>
+        <CD title="Seconds" time={seconds}/>
+        </div>
+    )
+    const submit = (subscribe) => {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(String(email).toLowerCase()))
+        {
+            setError(false);
+            subscribe({EMAIL: email})
+        }else{
+            setError(true);
+        }
+    }
+    const url = "https://mykstar.us1.list-manage.com/subscribe/post?u=00817acd5845a1c2c799dd5b7&amp;id=1593beda8a";
+    return (
+        <Grid.Container className="index-container">
+            <Grid xs direction="column" alignItems="center" justify="center">
+                <Logo className="logo"/>
+                <h1 className="title">Coming soon</h1>
+                <Spacer y={3}/>
+                <Countdown date={new Date('06/20/2021')} renderer={CDBOX}/>
+                <Spacer y={3}/>
+                <MailchimpSubscribe
+                url={url}
+                render={({ subscribe, status, message }) => (
+                <div className="input-box">
+                    <div className="input-group">
+                    <input value={email} onChange={(e) => {setEmail(e.target.value);setError(false)}} className="form-control" type="text" name="text-1542372332072" id="text-1542372332072" required="required" placeholder="Email"/>
+                    <label for="text-1542372332072">Email</label>
+                    <div className={`req-mark ${error || status === 'error' ? 'error' : ''}`}>!</div>
+                    </div>
+                <Button loading={status === 'sending'} disabled={status === "success"} className="transbtn" onClick={() => submit(subscribe)}>{status === 'success' ? 'Subscribed' : 'Subscribe'}</Button>
+                </div>
+                )}/>
+            </Grid>
+        </Grid.Container>
+    )
 }
+
+export default Index;
