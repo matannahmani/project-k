@@ -3,6 +3,7 @@ import Countdown from "react-countdown";
 import Logo from "../components/Logo";
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 import { useState } from "react";
+import Link from "next/link";
 
 const Index = () => {
     const [email,setEmail] = useState('');
@@ -52,6 +53,10 @@ const Index = () => {
                 <Button loading={status === 'sending'} disabled={status === "success"} className="transbtn" onClick={() => submit(subscribe)}>{status === 'success' ? 'Subscribed' : 'Subscribe'}</Button>
                 </div>
                 )}/>
+                <Spacer y={1}/>
+                <Link href="/app">
+                <Button className="transbtn" type="abort">Demo</Button>
+                </Link>
             </Grid>
         </Grid.Container>
     )

@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect( async() => {
     // check user
-
+    window.scrollTo(0, 1);
     return () => {
 
     }

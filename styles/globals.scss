@@ -10,6 +10,7 @@
 @import 'itemchooser';
 @import 'icons';
 @import 'comingsoon';
+@import 'labels';
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
 .body{
     display: flex;
@@ -32,6 +33,14 @@
         overflow-wrap: break-word;
         display: inline-block;
 }
+.text-small{
+    font-family: $family1;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.01rem;
+    line-height: 1.4rem;
+    color: $white;
+}
 .person-price{
     margin-right: 0.4rem;
     font-family: $family1;
@@ -47,10 +56,10 @@
 .person-subtitle{
     font-family: $family1;
     // font-family: cerebri, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: -0.01rem;
-    line-height: 1.8rem;
+    line-height: 1.6rem;
     color: rgb(173, 174, 181);
     margin: 0px;
     display: block;

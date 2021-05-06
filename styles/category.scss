@@ -28,7 +28,7 @@
 .personcard{
     transition: all 0.5s ease-in-out;
     width: 200px !important;
-    height: 320px !important;
+    height: 100% !important;
     background: none !important;
     border: none !important;
     margin: 0px 16px !important;
@@ -44,7 +44,7 @@
 }
 .person-stats{
     height: 100%;
-    position: absolute;
+    // position: absolute;
     top: 8px;
     right: 8px;
     padding: 0px 8px;
@@ -54,13 +54,17 @@
         position: relative;
     }
 }
+.progress-label{
+    width: 100% !important;
+}
 .person-progress-div{
     position: relative;
     display: flex;
-    align-items: center;
     height: 16px;
     width: 120px;
-    span {
+    overflow: hidden;
+    margin: 0px 0px 8px auto;
+    :last-child {
         position: absolute;
         right: 8px;
         font-family: $family1;
@@ -69,11 +73,21 @@
         color: black;
         z-index: 2;
     }
+    &.progress-small{
+        width: 98px !important;
+        :last-child{
+            // width: 80px !important;
+        }
+    }
 }
 .person-info{
     display: flex;
     flex-direction: column;
     margin-top: 8px;
+    .person-subtitle{
+        text-transform: uppercase;
+        margin: 4px 0px;
+    }
 }
 .person-progress{
     background: white !important;

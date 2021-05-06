@@ -5,6 +5,7 @@ import HowWork from "../../components/HowWork"
 import Progress from "../../components/Progress"
 import RatingBox from "../../components/RatingBox"
 import Link from 'next/link'
+import Label from "../../components/label"
 
 const Person = () => {
     const [modal,setModal] = useState(false);
@@ -12,6 +13,9 @@ const Person = () => {
     return (
         <Grid.Container justify="center" alignItems="center" direction="column" xs>
             <Grid xs={24} sm={24} md={12} lg={12} xl={12} direction="column" className="starprofile-container">
+                <div style={{margin: '0px 0px 16px auto'}}>
+                    <Button className="transbtn" auto type="abort">Follow</Button>
+                </div>
                 <div className="starprofile-head">
 
                 </div>
@@ -19,10 +23,18 @@ const Person = () => {
                 <div>
                 <p className="person-title">Ruyjin</p>
                 <p className="person-subtitle">ITZY - Raper</p>
+                <div className="person-labels">
+                    <Label title="Pictures"/>
+                    <Label title="Albums"/>
+                    <Label title="Video Call"/>
+                    <Label type="gold" title="Lottery"/>
+
+                </div>
                 </div>
                 <div className="starprofile-avatarbox">
                 <Avatar src="https://pm1.narvii.com/6612/f8e3648bce13c3d6491182d0babdd460e4ec2d48_hq.jpg" size="large"/>
-                <Progress/>
+                <span style={{marginTop: '8px'}} className="text-small">Orders Left</span>
+                <Progress big/>
                 </div>
                 </div>
                 <div className="starprofile-rates">

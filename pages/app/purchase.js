@@ -18,6 +18,16 @@ const Purchase = () => {
                 <Card shadow hoverable className="purchase-card">
                 {stage === 0 &&
                 <>
+                <Button onClick={() => stage !== 1 ? setStage(1) : setStage(0)} className="transbtn">Photos</Button>
+                <Spacer/>
+                <Button onClick={() => stage !== 1 ? setStage(1) : setStage(0)} className="transbtn darkbtn">Albums</Button>
+                <Spacer/>
+                <Button onClick={() => stage !== 1 ? setStage(1) : setStage(0)} className="transbtn">Lottery</Button>
+                <Spacer/>
+                </>
+                }
+                {stage === 1 &&
+                <>
                     <Avatar src="https://pm1.narvii.com/6612/f8e3648bce13c3d6491182d0babdd460e4ec2d48_hq.jpg" size="large"/>
                     <Spacer/>
                     <p className="person-subtitle" style={{color: 'black'}}>New request for Momo</p>
@@ -35,11 +45,15 @@ const Purchase = () => {
                     <Spacer/>
                 </>
                 }
-                {stage === 1 &&
+                {stage === 2 &&
                     <ItemChooster items={items}/>
                 }
+                {stage !== 0 &&
+                <>
                 <Button onClick={() => stage !== 1 ? setStage(1) : setStage(0)} className="transbtn">{stage === 0 ? 'Countine' : 'Purchase'}</Button>
                 <Spacer/>
+                </>
+                }
                 <Button onClick={() => stage !== 1 ? router.push('/app/person') : setStage(0)} className="transbtn darkbtn">{stage === 0 ? 'Momo Profile' : 'Back'}</Button>
                 </Card>
             </Grid>

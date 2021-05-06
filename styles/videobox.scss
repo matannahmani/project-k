@@ -1,13 +1,26 @@
+.video-con{
+    background-color: #252525;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    margin: 30px auto;
+    max-width: 1600px;
+    width: 90%;
+    height: 100%;
+}
 .videobox{
-    border-radius: 12px;
+    background-color: #252525;
+    background-repeat: no-repeat;
+    border-radius: 6px;
     display: flex;
-    margin: 24px;
     justify-content: center;
     overflow: hidden;
+    box-sizing: border-box;
     position: relative;
-    max-height: 425px;
-    min-height: 250px;
-    height: 100%;
+    video{
+        height: 100%;
+        max-height: 425px;
+        object-fit: cover;
+    }
     .videobox-text{
         align-self: center;
         color: $white;
@@ -20,9 +33,6 @@
         margin: 0;
         font-size: 32px;
         max-width: 450px;
-    }
-    video{
-        position: absolute;
     }
 }
 @media (max-width: 375px){

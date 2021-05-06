@@ -19,11 +19,10 @@
 .starprofile-avatarbox{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin: 0;
     .person-progress-div{
-        margin-top: 16px;
+        margin-top: 8px;
     }
 }
 .starprofile-rates{
@@ -55,4 +54,30 @@
     line-height: 1.8rem;
     color: rgb(173, 174, 181);
     margin: 0px;
+}
+.person-labels{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    > :nth-child(1n){
+        margin: 8px 16px 8px 0px;
+    }
+    @media (max-width: 320px) {
+        div{
+            width: 60px;
+        }
+        span {
+            font-size: 10px;
+        }
+        > :nth-child(1n){
+            margin: 8px 8px 8px 0px;
+        }
+    }
+}
+@media (max-width: 320px){
+    .starprofile-container{
+        padding: 8px !important;
+    }
 }
