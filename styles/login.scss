@@ -1,0 +1,82 @@
+.signup-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    padding: 16px 0px !important;        
+    > :nth-child(1n){
+        margin: 8px 0px;
+    }
+    .purchase-slider{
+        width: 90% !important;
+    }
+}
+.signnup-title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #F3F3F3;
+    :first-child{
+        color: $dark;
+        font-size: 20px;
+        padding: 8px;
+        margin: 0 auto;
+    }
+}
+.login-title{
+    font-weight: bold;
+    font-size: 49px;
+    line-height: 67px;
+    text-align: center;
+    color: #3D5582 !important;
+}
+.logincard .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+}
+.minor-wolf{
+    font-size: 18px;
+    line-height: 21px;
+    color: $wolf;
+}
+.normal{
+    font-size: 18px;
+    line-height: 25px;
+    color: $dark;
+    font-weight: 500;
+}
+
+@media (max-width: 400px) {
+    .normal{
+        font-size: 12px;
+    }
+}
+@media (max-width: 450px) {
+    .normal{
+        font-size: 14px;
+    }
+}
+@media (max-width: 320px){
+    .logincard{
+        .content{
+            padding: 8pt !important;
+        }
+        button{
+            margin: 8px;
+            .icon{
+                max-width: 24px;
+            }
+        }
+        .store-btn{
+            height: 100% !important;
+            padding: 8px !important;
+        }
+        .normal{
+            font-size: 10px;
+        }
+    }
+}

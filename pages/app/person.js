@@ -6,6 +6,7 @@ import Progress from "../../components/Progress"
 import RatingBox from "../../components/RatingBox"
 import Link from 'next/link'
 import Label from "../../components/label"
+import PersonSlider from '../../components/PersonSlider'
 
 const Person = () => {
     const [modal,setModal] = useState(false);
@@ -33,7 +34,7 @@ const Person = () => {
                 </div>
                 <div className="starprofile-avatarbox">
                 <Avatar src="https://pm1.narvii.com/6612/f8e3648bce13c3d6491182d0babdd460e4ec2d48_hq.jpg" size="large"/>
-                <span style={{marginTop: '8px'}} className="text-small">Orders Left</span>
+                <span style={{marginTop: '8px'}} className="text-small">Spots Left</span>
                 <Progress big/>
                 </div>
                 </div>
@@ -48,6 +49,9 @@ const Person = () => {
                 <Spacer/>
                 <Button onClick={() => setModal(true)} className="transbtn fatbtn opbtn"><Info/>How does it work?</Button>
                 <Spacer/>
+                <p className="person-title">Memories we created</p>
+                <Spacer/>
+                <PersonSlider/>
             </Grid>
             <HowWork state={modal} setState={setModal}/>
 

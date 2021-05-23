@@ -1,6 +1,10 @@
 import { Progress, useTheme } from "@geist-ui/react"
+import { Info } from "@geist-ui/react-icons"
+import { useState } from "react"
+import HelpModal from "./Helpmodal"
 
 const ProgressBar = ({sold=0,stock=100,label=false,big=false}) => {
+    const [state,setState] = useState(false);
     const theme = useTheme()
     const colors = {
         100: theme.palette.error,
@@ -10,13 +14,16 @@ const ProgressBar = ({sold=0,stock=100,label=false,big=false}) => {
 
     }
     return (
-        <div className={`${big || label ? '' : 'progress-small'} ${label ? 'progress-label person-progress-div' : 'person-progress-div'}`}>
+        <>
+        <div className={`${big || label ? '' : 'progress-small'}  ${label ? 'progress-label person-progress-div' : 'person-progress-div'}`}>
         {label &&
-        <span style={{marginRight: 'auto'}} className="text-small">Weekly Orders</span>
+        <Info className="info-progress" onClick={() => setState(true)}/>
         }
         <Progress className="person-progress" value={sold === 0 ? 0 : (sold / stock) * 100} colors={colors} />
-        <span >{sold}/{stock}</span>
-    </div>
+        <span >{sold}/{stock} 반점</span>
+        </div>
+        <HelpModal state={state} setState={setState}/>
+        </>
     )
 }
 export default ProgressBar;

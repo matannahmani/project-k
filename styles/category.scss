@@ -54,6 +54,21 @@
         position: relative;
     }
 }
+.info{
+    fill: white;
+    color: black !important;
+    margin-left: 8px;
+    margin-bottom: 6px;
+    height: 100%;
+}
+.info-progress{
+    position: absolute;
+    right: 8px;
+    z-index: 3;
+    fill: white;
+    top: 0px;
+    height: 100%;
+}
 .progress-label{
     width: 100% !important;
 }
@@ -66,7 +81,8 @@
     margin: 0px 0px 8px auto;
     :last-child {
         position: absolute;
-        right: 8px;
+        left: 8px;
+        height: 100%;
         font-family: $family1;
         font-size: 12px;
         font-weight: bold;
@@ -96,6 +112,8 @@
     width: 120px !important;
     height: 16px !important;
     border-radius: 12px !important;
+    position: absolute;
+    left: 0px;
 }
 .personcard-image{
     position: relative;

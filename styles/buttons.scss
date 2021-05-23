@@ -31,3 +31,42 @@
         }
     }
 }
+.blackbtn{
+    background: $dark !important;
+    border-radius: 16px !important;
+    color: $white !important;
+}
+.loginbtn{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 435px !important;
+    width: 100% !important;
+    height: 60px !important;
+    .left{
+        margin: 0px auto 0px auto;
+    }
+    .icon{
+        position: unset !important;
+        margin-right: 16px;
+        height: 32px;
+        width: auto;
+        transform: unset !important;
+        svg{
+            height: 100% !important;
+            width: auto !important;
+        }
+    }
+    .text{
+        position: unset !important;
+    }
+}
+.countinebtn{
+    height: 52px !important;
+}
+.whitebtn{
+    background: $white !important;
+    color: $dark !important;
+    border: 2px solid #56ADE8 !important;
+    border-radius: 16px !important;
+}

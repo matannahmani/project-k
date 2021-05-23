@@ -8,7 +8,7 @@ const Layout = (props) => {
     return (
         <>
         {router.pathname !== '/' ?
-        <Grid.Container style={{height: '100vh'}}>
+        <Grid.Container style={{minHeight: '100vh'}}>
             <Grid xs={24} justify="space-between" className="navbar" alignItems="center">
                 <Link href="/app">
                 <Logo/>

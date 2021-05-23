@@ -3,11 +3,31 @@
     padding: 24px;
 }
 .purchase-card{
-    width: 300px !important;
-    max-width: 100% !important;
+    width: 420px !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
     .content{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+}
+.p-label{
+    display: block;
+    font-weight: normal;
+    color: $wolf;
+    text-align: left;
+    padding: 0 0 0 1px;
+    margin-bottom: 8pt;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.kakaopay{
+    background: url("../public/icons/kakaopay.jpg");
+    object-fit: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #F4DC34 !important;
+    margin: 24px 0px;
 }
