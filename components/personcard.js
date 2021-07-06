@@ -4,12 +4,12 @@ import Link from "next/link";
 import Label from "./label";
 import Progress from "./Progress";
 
-const PersonCard = ({link='',picture,price,name,category,opt,infocard=false,label=false,labeltext}) => {
+const PersonCard = ({link='',picture,price,name,stock,sold,category,opt,infocard=false,label=false,labeltext}) => {
 
     return (
         <Card style={labeltext !== "포스터" ? {marginTop: '48px !important'}: {}} className="personcard">
             {labeltext === "포스터" &&
-            <Progress label={label}/>
+            <Progress stock={stock} sold={sold} label={label}/>
             }
             <Link href={link}>
                 <div>

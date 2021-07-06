@@ -15,7 +15,9 @@ const Layout = (props) => {
                 </Link>
                 <Grid xs={24} sm={24} justify="flex-end" alignItems="center">
                     <Input className="binput" icon={<Search/>} placeholder="Search ..."/>
+                    <Link href="/app/login">
                     <Button type="abort" className="transbtn" auto>Login</Button>
+                    </Link>
                 </Grid>
             </Grid>
             <div className="body">

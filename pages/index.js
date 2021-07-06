@@ -39,7 +39,7 @@ const Index = () => {
                 <Logo className="logo"/>
                 <h1 className="title">Coming soon</h1>
                 <Spacer y={3}/>
-                <Countdown date={new Date('06/20/2021')} renderer={CDBOX}/>
+                <Countdown date={new Date('08/1/2021')} renderer={CDBOX}/>
                 <Spacer y={3}/>
                 <MailchimpSubscribe
                 url={url}

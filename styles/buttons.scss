@@ -70,3 +70,10 @@
     border: 2px solid #56ADE8 !important;
     border-radius: 16px !important;
 }
+.btn-close{
+    background: white !important;
+    color: $dark !important;
+    svg{
+        color: $dark !important;
+    }
+}

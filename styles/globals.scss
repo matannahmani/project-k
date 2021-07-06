@@ -73,3 +73,20 @@
     white-space: nowrap;
     text-decoration: none;
 }
+.index-hero{
+    display: flex;
+    max-width: 640px;
+    min-height: 200px;
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: $error;
+    margin: 0 auto;
+    border-radius: 8px;
+    h1{
+        color: $white;
+        font-size: 32px;
+        line-height: 40px;
+    }
+}

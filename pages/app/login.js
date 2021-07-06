@@ -21,7 +21,7 @@ const Login = () => {
         <Spacer y={1.5}/>
         <span className="normal">Countine with email and password</span>
         <Spacer y={1.5}/>
-        <LoginInput id="email" label="Email" name="email" placeholder="birito@naver.com"  />
+        <LoginInput className="test" id="email" label="Email" name="email" placeholder="birito@naver.com"  />
         <LoginInput id="password" label="Password" type="password" name="password" placeholder="*****" />
         <Spacer y={0.5}/>
         <Button type="abort" className="transbtn countinebtn">Countine</Button>

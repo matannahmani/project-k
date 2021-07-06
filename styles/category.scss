@@ -118,3 +118,68 @@
 .personcard-image{
     position: relative;
 }
+
+.groupcall-card{
+    max-width: 340px !important;
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    background: $dark3 !important;
+    border: unset !important;
+    margin: 24px !important;
+    cursor: pointer;
+    .content{
+        padding: 16px !important;
+    }
+}
+.small-sub{
+    font-size: 0.8rem !important;
+    line-height: 1rem !important;
+}
+.wide-image img{
+    object-fit: cover !important;
+    object-position: center;
+}
+.groupcall-footer{
+    display: flex;
+    align-items: center;
+    div{
+        margin: 0px 8px !important;
+    }
+}
+.time-span{
+    font-family: cerebri, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: -0.01rem;
+    line-height: 1.5rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0.3rem;
+}
+.groupcall-tag{
+    font-family: cerebri, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01rem;
+    line-height: 1.5rem;
+    color: rgb(173, 174, 181);
+    display: flex;
+    width: 72px;
+    height: 100%;
+    svg{
+        margin-right: 4px;
+        width: 16px;
+        stroke-width: 1.8px;
+        color: $white !important;
+    }
+}
+
+.small-p-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .progress-small{
+        margin: 0 !important;
+        width: 72px !important;
+    }
+}
