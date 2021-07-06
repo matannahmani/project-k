@@ -1,12 +1,10 @@
 import Flicking from "@egjs/react-flicking";
 import { createRef, useEffect } from "react";
-import { Fade } from "@egjs/flicking-plugins";
 import { Image } from "@geist-ui/react";
 import { PlayFill } from '@geist-ui/react-icons'
 
 const PersonSlider = () => {
     const flicking = createRef(<Flicking/>);
-    const plugins = [new Fade()];
     useEffect( async () => {
         setInterval(() => {
             if ( flicking.current !== null ){
@@ -19,7 +17,7 @@ const PersonSlider = () => {
     },[flicking]);
     return (
     <Flicking ref={flicking} inputType = {["touch", "mouse"]} duration={1000} className="flicking flicking0" panelEffect = {x => 1 - Math.pow(1 - x, 3)}  bounce = {10}
-    autoResize = {true}  plugins={plugins}
+    autoResize = {true}  
         adaptive = {true} moveType={{ type: "snap", count: 1 }} gap={16} bound={true} circular={false}>
             {[...Array(7).keys()].map((e) => (
                 <div key={`p${e}`} className="panel">
