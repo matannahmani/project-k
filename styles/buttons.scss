@@ -77,3 +77,35 @@
         color: $dark !important;
     }
 }
+
+.follow-btn{
+    width: 125px !important;
+    min-width: unset !important;
+    height: 35px !important;
+    background: #404040 !important;
+    border-radius: 40px !important;
+    border: unset !important;
+    color: white !important;
+}
+
+.sticky-purchase{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80px;
+    background: #404040;
+    button{
+        background: #F0FDA8 !important;
+        border-radius: 70px !important;
+        border: unset !important;
+        color: black !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+        width: 250px !important;
+    }
+}

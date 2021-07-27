@@ -21,8 +21,23 @@
     flex-direction: column;
     align-items: center;
     margin: 0;
+    .avatar{
+        border: unset !important;
+    }
     .person-progress-div{
         margin-top: 8px;
+    }
+}
+.starprofile-bio{
+    color: white;
+    font-size: 24px;
+    line-height: 32px;
+    font-family:"Josefin Sans", sans-serif;
+}
+.starprofile-services{
+    > span{
+        color: white;
+        opacity: 0.6;
     }
 }
 .starprofile-rates{
@@ -31,7 +46,7 @@
     justify-content: space-evenly;
     width: 100%;
     height: 6.6rem;
-    background-color: rgb(28, 28, 28);
+    background: #404040;
     border-radius: 0.8rem;
     margin: 24px 0px;
 }
@@ -82,3 +97,4 @@
         padding: 8px !important;
     }
 }
+

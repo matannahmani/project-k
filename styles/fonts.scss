@@ -1,0 +1,21 @@
+
+
+@mixin heading1{
+    font-family: "Josefin Sans", sans-serif !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 48px !important;
+    line-height: 55px !important;
+}
+
+.heading1{ @include heading1; }
+
+@mixin heading2{
+    font-family: "Josefin Sans", sans-serif !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 28px !important;
+    line-height: 32px !important;
+}
+
+.heading2{ @include heading2; }

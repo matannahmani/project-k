@@ -1,5 +1,7 @@
+@import 'mixins';
 @import 'colors';
 @import 'layout';
+@import 'fonts';
 @import 'inputs';
 @import 'buttons';
 @import 'videobox';
@@ -75,18 +77,45 @@
 }
 .index-hero{
     display: flex;
-    max-width: 640px;
-    min-height: 200px;
-    width: 90vw;
+    height: 395px;
+    width: 90%;
+    max-width: 730px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: $error;
+    // background: #3F96B9;
+    background-position: center;
+    background:linear-gradient( rgba(74, 176, 203, 0.6) 100%, rgba(74, 176, 203, 0.45 ) 100%),url("/hero-bg.jpg");
     margin: 0 auto;
     border-radius: 8px;
     h1{
         color: $white;
         font-size: 32px;
         line-height: 40px;
+    }
+    @include for-phone-only{
+        height: 180px;
+        width: 330px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        .heading1{
+            font-size: 24px !important;
+            line-height: 32px !important;
+        }
+        .heading2{
+            font-size:  16px !important;
+            line-height: 24px !important;
+        }
+    }
+    @include for-small-phone-only{
+        height: 140px;
+        width: 260px;
+        .heading1{
+            font-size: 20px !important;
+        }
+        .heading2{
+            font-size: 14px !important;
+            max-width: 120px !important;
+        }
     }
 }

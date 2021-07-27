@@ -4,15 +4,17 @@ import Category from '../../components/category';
 import PersonCard from '../../components/personcard';
 import Link from 'next/link';
 import GroupCall from '../../components/GroupCall';
+import { Spacer } from '@geist-ui/react';
 export default function Home() {
   return (
     <>
     {/* <VideoBox posterurl="/video/poster.jpg" videourl="/video/postervideo.m4v" text={`Personalized memeories from your favorite KPOP Stars`}/>
      */}
      <div className="category index-hero">
-       <h1>
-       The place for
-       <br/>unforggetable memeories.
+       <h1 className="heading1">
+       Connect with your K-Stars
+       <Spacer y={1}/>
+       <span className="heading2">Personalized Videos<br className="only-small"/><span className="only-big"> |</span> Messages | Autographs.</span>
        </h1>
      </div>
     <Category catname="피처링">

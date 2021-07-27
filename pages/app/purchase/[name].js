@@ -1,8 +1,8 @@
 import { AutoComplete, Avatar, Button, Card, Grid, Input, Spacer, Textarea } from "@geist-ui/react"
 import { useState } from "react"
 import {useRouter} from 'next/router'
-import ItemChooster from "../../components/ItemChooser";
-import MoodIcon from "../../components/MoodIcon";
+// import ItemChooster from "../../../../components/ItemChooser";
+import MoodIcon from "../../../components/MoodIcon";
 import {MdCake} from "react-icons/md"
 import { ArrowLeft, Smartphone, Video } from "@geist-ui/react-icons";
 import {FaTicketAlt} from "react-icons/fa"
