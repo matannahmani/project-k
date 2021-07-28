@@ -8,19 +8,19 @@ import Link from 'next/link'
 import Label from "../../components/label"
 import PersonSlider from '../../components/PersonSlider'
 import StickyPurchase from "../../components/stickyPurchase"
+import ChoiceModal from "../../components/ChoiceModal"
 
 const Person = () => {
     const [modal,setModal] = useState(false);
-
+    const [visible,setVisible] = useState(false);
     return (
+        <>
         <Grid.Container justify="center" alignItems="center" direction="column" xs>
             <Grid xs={24} sm={24} md={12} lg={12} xl={12} direction="column" className="starprofile-container">
-                <div style={{margin: '0px 0px 16px auto'}}>
-                    <Button className="transbtn" auto type="abort">Follow</Button>
-                </div>
                 <div className="starprofile-head">
 
                 </div>
+                <Spacer/>
                 <div className="starprofile-head-info">
                 <div>
                 <p className="person-title">Ruyjin</p>
@@ -31,6 +31,10 @@ const Person = () => {
                 </div>
                 <div className="starprofile-avatarbox">
                 <Avatar src="https://pm1.narvii.com/6612/f8e3648bce13c3d6491182d0babdd460e4ec2d48_hq.jpg" size="large"/>
+                <div className="desktop-reviews">
+                <RatingBox title="Followers" rate="50K ️😄"/>
+                <RatingBox title="Reviews (195)" rate="5.0 ️⭐️"/>
+                </div>
                 </div>
                 </div>
                 <div className="starprofile-bio">
@@ -40,7 +44,7 @@ const Person = () => {
                 <div className="starprofile-services">
                     <span>Services</span>
                     <Spacer/>
-                    <div style={{display: 'flex',alignItems: 'center',justifyContent: 'space-around'}}>
+                    <div className="labels-box">
                     <Label cardlabel nopos title="Video Call"/>
                     <Label cardlabel nopos title="Autographs"/>
                     <Label cardlabel nopos title="Video MSG"/>
@@ -52,10 +56,7 @@ const Person = () => {
                     <RatingBox title="Followers" rate="50K ️😄"/>
                     <RatingBox title="Reviews (195)" rate="5.0 ️⭐️"/>
                 </div>
-                <StickyPurchase/>
-                {/* <Link href="/app/purchase">
-                <Button className="transbtn fatbtn">Purchase</Button>
-                </Link> */}
+                <StickyPurchase onClick={() => setVisible(true)}/>
                 <Spacer/>
                 <Button onClick={() => setModal(true)} className="transbtn fatbtn opbtn"><Info/>How does it work?</Button>
                 <Spacer/>
@@ -64,8 +65,9 @@ const Person = () => {
                 <PersonSlider/>
             </Grid>
             <HowWork state={modal} setState={setModal}/>
-
         </Grid.Container>
+        <ChoiceModal setVisible={setVisible} visible={visible} />
+        </>
     )
 }
 

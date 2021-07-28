@@ -8,6 +8,7 @@
     height: 300px;
     border-radius: 6px;
     margin-bottom: 24px;
+    margin: 0 auto;
 }
 .starprofile-head-info{
     display: flex;
@@ -27,17 +28,39 @@
     .person-progress-div{
         margin-top: 8px;
     }
+    .desktop-reviews{
+        @include for-desktop-up{
+            display: flex;
+        }
+        margin: 8px 0px;
+        display: none;
+        > div{
+            margin: 0px 8px;
+        }
+    }
 }
 .starprofile-bio{
     color: white;
     font-size: 24px;
     line-height: 32px;
     font-family:"Josefin Sans", sans-serif;
+    max-width: 420px;
 }
 .starprofile-services{
     > span{
         color: white;
         opacity: 0.6;
+    }
+    .labels-box{
+        display: flex;
+        flex-wrap: wrap;
+        @include for-small-phone-only{
+            justify-content: space-around;
+        }
+        max-width: 400px;
+        > div {
+            margin: 8px;
+        }
     }
 }
 .starprofile-rates{
@@ -48,13 +71,18 @@
     height: 6.6rem;
     background: #404040;
     border-radius: 0.8rem;
-    margin: 24px 0px;
+    margin: 24px auto;
+    max-width: 400px;
+    @include for-desktop-up{
+        display: none;
+    }
 }
 .ratingbox{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
     > div{
         display: flex;
         width: 100%;

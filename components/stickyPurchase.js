@@ -1,10 +1,10 @@
 import { Button } from "@geist-ui/react";
 
-const StickyPurchase = () => (
-
+const StickyPurchase = ({onClick}) => {
+    return(
     <div className="sticky-purchase">
-        <Button>Get in contact</Button>
+        <Button onClick={onClick}>Get in contact</Button>
     </div>
-)
-
+    )
+}
 export default StickyPurchase;

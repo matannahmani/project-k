@@ -8,3 +8,7 @@ $warning: #FFD166;
 $error: #EF476F;
 $white: white;
 $family1: 'Josefin Sans', sans-serif;
+
+.white {
+    color: $white !important;
+}
