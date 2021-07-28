@@ -62,7 +62,9 @@
     }
 }
 .countinebtn{
-    height: 52px !important;
+    height: 40px !important;
+    width: 160px !important;
+    min-width: unset !important;
 }
 .whitebtn{
     background: $white !important;

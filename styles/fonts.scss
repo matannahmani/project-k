@@ -1,4 +1,143 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap');
+$monsterrat: 'Montserrat', sans-serif;
+$noto: 'Noto Sans', sans-serif;
+$notokr: 'Noto Sans KR', sans-serif;
+
+.kr-f{
+    font-family: $notokr !important;
+}
+.en-f{
+    font-family: $noto !important;
+}
+
+@mixin text-large-bold{
+    font-size: 22px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 28px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.text-large-bold{ @include text-large-bold; }
+@mixin text-large-regular{
+    //styleName: Large Text Regular !important;
+    font-size: 22px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 32px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+    @include for-phone-only {
+        font-size: 18px !important;
+    }
+    @include for-small-phone-only {
+        font-size: 16px !important;
+    }
+
+}
+.text-large-regular{ @include text-large-regular; }
+@mixin medium-text-bold{
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 25px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.medium-text-bold{ @include medium-text-bold; }
+@mixin medium-text-regular{
+    //styleName: Medium Text Regular !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 27px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+
+}
+.medium-text-regular{ @include medium-text-regular; }
+@mixin normal-text-bold{
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 25px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.normal-text-bold{ @include normal-text-bold; }
+@mixin normal-text-regular{
+    //styleName: Normal Text Regular !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 25px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.normal-text-regular{ @include normal-text-regular; }
+@mixin input-field-text-bold{
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+
+}
+.input-field-text-bold{ @include input-field-text-bold; }
+@mixin input-field-text-regular{
+    //styleName: Input Text Regular !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 22px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.input-field-text-regular{ @include input-field-text-regular; }
+
+@mixin small-text-bold{
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.small-text-bold{ @include small-text-bold; }
+
+@mixin small-text-regular{
+    //styleName: Small Text Regular !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 22px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.small-text-regular{ @include small-text-regular; }
+@mixin tiny-text-bold{
+    font-size: 12px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+
+}
+.tiny-text-bold{ @include tiny-text-bold; }
+
+@mixin tiny-text-regular{
+    //styleName: Tiny Text Regular !important;
+    font-size: 12px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+}
+.tiny-text-regular{ @include tiny-text-regular; }
 
 @mixin heading1{
     font-family: "Josefin Sans", sans-serif !important;
@@ -19,3 +158,5 @@
 }
 
 .heading2{ @include heading2; }
+
+.b { font-weight: bold !important;}

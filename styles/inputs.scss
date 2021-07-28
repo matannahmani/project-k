@@ -13,3 +13,42 @@
         color: $white !important;
     }
 }
+
+.large-white-input {
+    .input-wrapper{
+    background: #FFFFFF;
+    border: 1px solid #D5D6D5 !important;
+    border-radius: 4px !important;
+    max-width: 400px !important;
+    height: 45px !important;
+    }
+    &.error{
+        border-color: $error !important;
+      }
+}
+.large-white-input-label{
+    font-family: $noto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: $dark
+}
+.dark-input{
+    .input-wrapper{
+    background: #333333 !important;
+    border: 1px solid #BDBDBD !important;
+    border-radius: 4px !important;
+    }
+    input{
+        color: $white !important;
+    }
+}
+.textarea-dark{
+    background: #333333;
+    /* Gray 4 */
+
+    border: 1px solid #BDBDBD !important;
+    border-radius: 10px;
+    color: $white !important;
+}

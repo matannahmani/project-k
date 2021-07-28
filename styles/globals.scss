@@ -18,12 +18,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
 .body{
     display: flex;
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     flex-direction: column;
 }
+.price-box{
+    position: relative;
+    width: 56px;
+    height: 35px;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    > svg{
+        top: 0;
+        position: absolute;
+        width: 56px;
+        height: 35px;
+    }
+    span{
+        z-index: 2;
+    }
+}
+.styled-avatar{
+    border: #FBE6CF 4px solid !important;
+    height: 120px !important;
+    width: 120px !important;
+    // background-color: #FBE6CF !important;
+}
 .whitesvg svg{
     color: $white !important;
+}
+.no-margin{
+    margin: 0px !important;
 }
 .person-title{
         font-family: $family1;

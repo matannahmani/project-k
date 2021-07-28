@@ -31,3 +31,12 @@
     background-color: #F4DC34 !important;
     margin: 24px 0px;
 }
+.purchase-person{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include for-phone-only{
+        margin-bottom: 80px;
+    }
+}
