@@ -56,7 +56,7 @@ const Person = () => {
                     <RatingBox title="Followers" rate="50K ️😄"/>
                     <RatingBox title="Reviews (195)" rate="5.0 ️⭐️"/>
                 </div>
-                <StickyPurchase onClick={() => setVisible(true)}/>
+                <StickyPurchase text="Contact Ruyjin" onClick={() => setVisible(true)}/>
                 <Spacer/>
                 <Button onClick={() => setModal(true)} className="transbtn fatbtn opbtn"><Info/>How does it work?</Button>
                 <Spacer/>

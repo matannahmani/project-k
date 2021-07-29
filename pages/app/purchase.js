@@ -1,4 +1,5 @@
 import { Avatar, Grid, Input, Spacer, Textarea } from "@geist-ui/react"
+import Link from "next/link";
 import { useState } from "react";
 import { MdCake } from "react-icons/md"
 import MoodIcon from "../../components/MoodIcon"
@@ -25,7 +26,6 @@ const Purchase = () => {
             )
             ))
         if (input.info.length === 0 || input.template){
-            console.log(index);
             switch (index) {
                 case 0:
                     setInput({...input,template: true,info: `Hey ${input.name.length > 0 ? input.name : 'Mati'} First of all i want to say a happybirth...`})
@@ -59,7 +59,9 @@ const Purchase = () => {
                 <Spacer/>
                 <Textarea value={input.info} onChange={(e) => setInput({...input,info: e.target.value,template: false})} placeholder="What message should Ruyjin record?" className="textarea-dark" />
                 <Spacer/>
-                <StickyPurchase/>
+                <Link href="/app/payment">
+                    <StickyPurchase text="Continue to Payment"/>
+                </Link>
 
         </div>
     )

@@ -36,6 +36,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 7200px;
+    margin: 0 auto;
+    @include for-tablet-landscape-up{
+        margin-top: 10vh;
+        > :nth-child(1n) {
+            margin: 10px 0px;
+            
+        }
+    }
     @include for-phone-only{
         margin-bottom: 80px;
     }
