@@ -10,6 +10,20 @@ const Layout = (props) => {
     const [visible,setVisible] = useState(false);
 
     const purchasePath = () => router.pathname.includes('purchase') || router.pathname.includes('payment')
+
+    const backHandler = () => {
+        console.log(router.pathname)
+        switch (router.pathname) {
+            case '/app/payment':
+                router.push({pathname: '/app/purchase',query: router.query})
+                break;
+            case '/app/purchase':
+                router.push('/app/person');
+                break;
+            default:
+                break;
+        }
+    }
     return (
         <>
         {router.pathname !== '/' ?
@@ -24,7 +38,7 @@ const Layout = (props) => {
                     <Button onClick={() => setVisible(true)} type="abort" size="auto" className="trans-btn white" auto>Login</Button>
                 </Grid>
                 :
-                <ChevronLeft xmlns="http//www.w3.org/2000/svg" viewBox="0 0 24 24" className="return-btn" onClick={() => router.back()}/>
+                <ChevronLeft xmlns="http//www.w3.org/2000/svg" viewBox="0 0 24 24" className="return-btn" onClick={backHandler}/>
                 }
             </Grid>
             <div className="body">

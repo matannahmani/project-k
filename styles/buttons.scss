@@ -105,7 +105,7 @@
     position: fixed;
     bottom: 0px;
     left: 0px;
-    z-index: 99999;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,13 +119,25 @@
         color: black !important;
         font-size: 20px !important;
         font-weight: bold !important;
-        width: 250px !important;
+        min-width: 250px !important;
+        width: auto !important;
     }
     @include for-desktop-up{
-        width: 200px;
+        min-width: 200px !important;
         background: transparent;
         position: initial;
         margin: 0 auto;
         z-index: 1;
     }
+}
+
+.edit-text-btn{
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    cursor: pointer;
 }

@@ -160,3 +160,20 @@ $notokr: 'Noto Sans KR', sans-serif;
 .heading2{ @include heading2; }
 
 .b { font-weight: bold !important;}
+
+.min-letter{
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #FFFFFF;
+    opacity: 0.75;
+    &.descp{
+        line-height: 20px;
+        text-align: left;
+    }
+}
