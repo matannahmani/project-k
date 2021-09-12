@@ -1,18 +1,19 @@
 import { Avatar, Button, Grid, Spacer } from "@geist-ui/react"
-import { Info, Star, User } from "@geist-ui/react-icons"
+import { Info } from "@geist-ui/react-icons"
 import { useState } from "react"
 import HowWork from "../../components/HowWork"
-import Progress from "../../components/Progress"
 import RatingBox from "../../components/RatingBox"
-import Link from 'next/link'
 import Label from "../../components/label"
 import PersonSlider from '../../components/PersonSlider'
 import StickyPurchase from "../../components/stickyPurchase"
 import ChoiceModal from "../../components/ChoiceModal"
+import { useRouter } from "next/router"
 
 const Person = () => {
     const [modal,setModal] = useState(false);
     const [visible,setVisible] = useState(false);
+    const router = useRouter()
+    const { star } = router.query
     return (
         <>
         <Grid.Container justify="center" alignItems="center" direction="column" xs>
@@ -66,7 +67,7 @@ const Person = () => {
             </Grid>
             <HowWork state={modal} setState={setModal}/>
         </Grid.Container>
-        <ChoiceModal setVisible={setVisible} visible={visible} />
+        <ChoiceModal href={star} setVisible={setVisible} visible={visible} />
         </>
     )
 }

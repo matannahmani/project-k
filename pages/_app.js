@@ -6,6 +6,8 @@ import 'nprogress/nprogress.css'; //styles of nprogress
 import Router from 'next/router'
 import { useEffect } from 'react';
 import Head from 'next/head';
+import { UserWrapper } from '../lib/UserContext';
+import { AppWrapper } from '../lib/AppContext';
 
 
 function MyApp({ Component, pageProps }) {
@@ -60,9 +62,11 @@ function MyApp({ Component, pageProps }) {
     </Head>
     <GeistProvider >
     <CssBaseline />
+    <UserWrapper>
     <Layout>
     <Component {...pageProps} />
     </Layout>
+    </UserWrapper>
   </GeistProvider>
     </>
   )

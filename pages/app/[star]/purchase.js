@@ -2,12 +2,15 @@ import { Avatar, Input, Spacer, Textarea } from "@geist-ui/react"
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import MoodIcon from "../../components/MoodIcon"
-import StickyPurchase from "../../components/stickyPurchase"
-import Rect from '../../public/icons/rect.svg';
+import MoodIcon from "../../../components/MoodIcon"
+import StickyPurchase from "../../../components/stickyPurchase"
+import { useAppContext } from "../../../lib/AppContext";
+import Rect from '../../../public/icons/rect.svg';
 
 const Purchase = () => {
-    const router = useRouter();
+    const router = useRouter()
+    const [app,setApp] = useAppContext();
+    const { star } = router.query
 
     const PriceTag = ({price}) => (
         <div className="price-box">
@@ -15,34 +18,20 @@ const Purchase = () => {
             <span className="text-large-bold">{price}$</span>
         </div>
     )
-    const [input,setInput] = useState({name: '',bio: '',option: -1,template: true});
+    const [input,setInput] = useState({name: app.p.name || '',bio: app.p.bio || '',option: app.p.option !== undefined ? app.p.option : -1,template: true});
 
-    const [options,setOptions] = useState([
+    const options = [
         {title:"Birthday", icon: <span>🍰</span> },
         {title:"Marriage", icon: <span>💒</span> },
         {title:"Gift", icon: <span>🎁</span> },
-    ])
+    ]
 
     useEffect(() => {
-        if (!router.isReady) return;
-        router.push({query: {name: input.name,bio: input.bio,option: input.option}});
+        setApp({...app,p: {name: input.name,bio: input.bio,option: input.option}})
     }, [input])
 
-    useEffect(() => {
-        if (!router.isReady) return;
-        const savedinputs = {name: '',bio: '',option: -1};
-        if (router.query.name !== undefined)
-            savedinputs.name = router.query.name
-        if (router.query.bio !== undefined)
-            savedinputs.bio = router.query.bio
-        if (router.query.option !== undefined && router.query.option !== -1){
-            savedinputs.option = parseInt(router.query.option)
-        }
-        setInput({...savedinputs,template: true})
-    }, [router.isReady])
 
     const setActive = (index) => {
-        console.log(input)
             switch (index) {
                 case 0:
                     setInput({...input,template: input.template,option: index,bio: !input.template ? input.bio : `Hey ${input.name.length > 0 ? input.name : 'Mati'} First of all i want to say a happybirth...`})
@@ -79,7 +68,7 @@ const Purchase = () => {
                 <span style={{margin: '0 0 0 auto'}} className="min-letter">Max 400 characters</span>
                 </div>
                 <Spacer/>
-                <Link href={{pathname: "/app/payment",query: router.query}}>
+                <Link href={`/app/${star}/payment`}>
                     <StickyPurchase text="Continue to Payment"/>
                 </Link>
         </div>

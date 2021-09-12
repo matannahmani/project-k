@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import PageModal from "../../components/PageModal";
-import StickyPurchase from "../../components/stickyPurchase"
-import Rect from '../../public/icons/rect.svg';
+import PageModal from "../../../components/PageModal";
+import StickyPurchase from "../../../components/stickyPurchase"
+import { useAppContext } from "../../../lib/AppContext";
+import Rect from '../../../public/icons/rect.svg';
 
 const Payment = () => {
-    const router = useRouter();
+    const router = useRouter()
+    const [app,setApp] = useAppContext();
     const [input,setInput] = useState({name: '',bio: '',price: '',email: '',option: -1});
     const [visible,setVisible] = useState(false);
     const [,setToasts] = useToasts();
@@ -18,32 +20,18 @@ const Payment = () => {
             <span className="text-large-bold">{price}$</span>
         </div>
     )
-    const [options,setOptions] = useState([
+    const options = [
         {title:"Birthday", icon: <span>🍰</span> },
         {title:"Marriage", icon: <span>💒</span> },
         {title:"Gift", icon: <span>🎁</span> },
-    ])
+    ]
 
     useEffect(() => {
-        if (!router.isReady) return;
-        router.push({query: {...router.query,name: input.name,bio: input.bio}});
-    }, [input])
-
-    useEffect(() => {
-        if (!router.isReady) return;
-        const savedinputs = {name: '',bio: ''};
-        if (router.query.name !== undefined)
-            savedinputs.name = router.query.name
-        if (router.query.bio !== undefined)
-            savedinputs.bio = router.query.bio
-        if (router.query.option !== undefined && router.query.option !== -1){
-            savedinputs.option = parseInt(router.query.option)
-        }
-        setInput({...savedinputs})
-    }, [router.isReady])
+        setInput({...input,...app.p})
+    }, [])
 
     const backHandler = () => {
-        router.push({pathname: '/app/purchase',query: router.query})
+        router.back();
     }
 
     const handleNotify = () => {

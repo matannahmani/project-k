@@ -3,26 +3,18 @@ import { ChevronLeft, Search } from "@geist-ui/react-icons";
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useUserContext } from "../lib/UserContext";
 import LoginCard from "./LoginCard";
 import PageModal from "./PageModal";
 const Layout = (props) => {
     const router = useRouter();
     const [visible,setVisible] = useState(false);
+    const [user,] = useUserContext();
 
     const purchasePath = () => router.pathname.includes('purchase') || router.pathname.includes('payment')
 
     const backHandler = () => {
-        console.log(router.pathname)
-        switch (router.pathname) {
-            case '/app/payment':
-                router.push({pathname: '/app/purchase',query: router.query})
-                break;
-            case '/app/purchase':
-                router.push('/app/person');
-                break;
-            default:
-                break;
-        }
+        router.back();
     }
     return (
         <>
@@ -35,7 +27,11 @@ const Layout = (props) => {
                 {!purchasePath() ?
                 <Grid xs={24} sm={24} justify="flex-end" alignItems="center">
                     <Input className="binput" icon={<Search/>} placeholder="Search ..."/>
+                    {user.logged ? 
+                    <Button onClick={() => setVisible(false)} type="abort" size="auto" className="trans-btn white" auto>Profile</Button>
+                    :
                     <Button onClick={() => setVisible(true)} type="abort" size="auto" className="trans-btn white" auto>Login</Button>
+                    }
                 </Grid>
                 :
                 <ChevronLeft xmlns="http//www.w3.org/2000/svg" viewBox="0 0 24 24" className="return-btn" onClick={backHandler}/>
@@ -49,7 +45,7 @@ const Layout = (props) => {
         props.children
         }
         <PageModal visible={visible} setVisible={setVisible}>
-            <LoginCard/>
+            <LoginCard close={() => setVisible(false)}/>
         </PageModal>
         </>
     )

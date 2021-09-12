@@ -3,7 +3,7 @@ import { X } from "@geist-ui/react-icons";
 import PageModal from "./PageModal";
 import Link from "next/dist/client/link";
 
-const ChoiceModal = ({visible = false,setVisible,handler}) => {
+const ChoiceModal = ({href,visible = false,setVisible,handler}) => {
 
     const Option = ({name,color,info,last = false,href=""}) => (
         <Link href={href}>
@@ -26,9 +26,9 @@ const ChoiceModal = ({visible = false,setVisible,handler}) => {
             <span className="title">Make Your Choice</span>
             <X className="close" onClick={() => setVisible(false)}/>
             <Spacer/>
-            <Option href="/app/purchase" color="#FBE6CF" name="📹 Personalized Video Message" info="$50 | Get a video message of 1-2 minutes with a text of your choice. Ruyjin will recors it in her own style just for you."/>
-            <Option href="test" color="#F6C8BE" name="🤙 Book a Video Call" info="$80 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-            <Option href="test2" color="#DEF8FF" name="🎫 Raffle Tickets" info="$12 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." last/>
+            <Option href={`/app/${href}/purchase?option=0`} color="#FBE6CF" name="📹 Personalized Video Message" info="$50 | Get a video message of 1-2 minutes with a text of your choice. Ruyjin will recors it in her own style just for you."/>
+            <Option href={`/app/${href}/purchase?option=1`} href="test" color="#F6C8BE" name="🤙 Book a Video Call" info="$80 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+            <Option href={`/app/${href}/purchase?option=2`} href="test2" color="#DEF8FF" name="🎫 Raffle Tickets" info="$12 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." last/>
             </PageModal>
     )
 }
