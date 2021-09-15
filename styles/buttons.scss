@@ -12,6 +12,14 @@
         background-color: white !important;
     }
 }
+.cv{
+    transform: rotate(180deg);
+    transition: transform 0.1s ease-in-out;
+    margin-left: 4px;
+    &.active{
+        transform: rotate(0deg);
+    }
+}
 .opbtn{
     background: transparent !important;    
 }
@@ -109,13 +117,18 @@
     position: fixed;
     bottom: 0px;
     left: 0px;
-    z-index: 999;
+    z-index: 99999;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 80px;
     background: #404040;
+    &.trans{
+        button{
+            background: none !important;
+        }
+    }
     button{
         background: #F0FDA8 !important;
         border-radius: 70px !important;

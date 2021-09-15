@@ -19,7 +19,7 @@ const LoginCard = ({close}) => {
         fb.onunload = async () => {
             const checkuser = await apiRequest({path: 'users',method: 'get'});
             if (checkuser.status === 200){
-                setUser({logged: true,firstload: false,info: checkuser.data});
+                setUser({logged: true,firstload: false,info: checkuser.data.data});
                 setToast({text: 'Logged in succesfully',type: 'success'});
                 localStorage.setItem('logged',true);
                 close();

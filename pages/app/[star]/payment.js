@@ -7,11 +7,12 @@ import PageModal from "../../../components/PageModal";
 import StickyPurchase from "../../../components/stickyPurchase"
 import { useAppContext } from "../../../lib/AppContext";
 import Rect from '../../../public/icons/rect.svg';
+import KakaoPay from '../../../public/kakaopay.svg'
 
 const Payment = () => {
     const router = useRouter()
     const [app,setApp] = useAppContext();
-    const [input,setInput] = useState({name: '',bio: '',price: '',email: '',option: -1});
+    const [input,setInput] = useState({name: '',bio: '',price: '',email: '',option: -1,phone: ''});
     const [visible,setVisible] = useState(false);
     const [,setToasts] = useToasts();
     const PriceTag = ({price}) => (
@@ -67,12 +68,14 @@ const Payment = () => {
                 <Spacer/>
                 <Input style={{maxWidth: '240px'}} width="100%" value={input.email} onChange={(e) => setInput({...input,email: e.target.value})} className="dark-input" placeholder="Your Email"/>
                 <Spacer/>
-                <span className="small-text-bold white">
+                <Input style={{maxWidth: '240px'}} width="100%" value={input.phone} onChange={(e) => setInput({...input,phone: e.target.value})} className="dark-input" placeholder="Your Phone (Optional)"/>
+                <Spacer/>
+                {/* <span className="small-text-bold white">
                 At this point our service is not ready to connect you with Ruyjin, but it will be very soon.<br/>Hit the button below and we will keep you updated on the latest news and which of your K Stars have joined our community.
-                </span>
-                <StickyPurchase onClick={handleNotify} text="Confirm to receive updates"/>
+                </span> */}
+                <StickyPurchase trans props={{style: {background: '#F6E84D'}}} text={<KakaoPay height="60px"/>}/>
         </div>
-        <PageModal className="loader-modal" visible={visible} setVisible={setVisible}>
+        {/* <PageModal className="loader-modal" visible={visible} setVisible={setVisible}>
         <span className="text-large-bold">Sending...</span>
         <motion.div
               animate={{
@@ -86,7 +89,7 @@ const Payment = () => {
               style={{position: 'absolute',bottom: '32px'}}
               transition={{ type: 'spring', duration: 1, repeat: Infinity, repeatDelay: 1,    repeatType: "reverse"          }}
             />
-        </PageModal>
+        </PageModal> */}
         </>
     )
 }
