@@ -14,29 +14,19 @@ const LoginCard = ({close}) => {
     const [,setToast] = useToasts();
 
     const facebookHandler = () => {
-        window.open(`${liveIP}/auth/facebook`);
-        setListen(true);
+        const fb = window.open(`${liveIP}/auth/facebook`);
         setLoading(true);
-    }
-
-    useEffect(() => {
-        if (!listenOAuth) return;
-        const interval = setInterval(async () => {
+        fb.onunload = async () => {
             const checkuser = await apiRequest({path: 'users',method: 'get'});
             if (checkuser.status === 200){
                 setUser({logged: true,firstload: false,info: checkuser.data});
                 setToast({text: 'Logged in succesfully',type: 'success'});
                 localStorage.setItem('logged',true);
-                setListen(false);
-                setLoading(false);
-                clearInterval(interval);
                 close();
             }
-        },1000)
-        return () => {
-            clearInterval(interval);
+            setLoading(false);
         }
-    }, [listenOAuth])
+    }
 
     return (
         <Grid.Container className="logincard" alignItems="center" justify="center" direction="column">
